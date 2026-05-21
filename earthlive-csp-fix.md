@@ -4,7 +4,7 @@ NEARLY there! The good news is adverts are now firing in all countries where res
 
 ## Root Cause
 
-The Content Security Policy (CSP) header was missing `pagead2.googlesyndication.com` and related Google ad domains in the `frame-src`, `connect-src`, and `img-src` directives. Post-consent, AdSense serves ads through iframes from these domains — which the old CSP blocked. Vietnam/US worked because AdSense serves lighter ad formats there that didn't hit the missing CSP entries.
+Post-consent, AdSense serves ads through iframes from these domains — which the old CSP blocked. Vietnam/US worked because AdSense serves lighter ad formats there that didn't hit the missing CSP entries.
 
 ## Fix
 
@@ -20,8 +20,6 @@ default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gs
 - `https://*.googlesyndication.com`
 - `https://*.doubleclick.net`
 - `https://*.safeframe.googlesyndication.com`
-
-*(pagead2.googlesyndication.com and googleads.g.doubleclick.net were already present)*
 
 **`connect-src`** — Added:
 - `https://*.adtrafficquality.google`
