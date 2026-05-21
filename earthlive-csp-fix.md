@@ -36,9 +36,3 @@ default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gs
 
 **`img-src`** — Removed:
 - `https://www.google.de` *(redundant, covered by `*.google.com`)*
-
-## After Deploying
-
-1. Purge Cloudflare cache — Caching → Configuration → Purge Everything
-2. Test from a UK IP in incognito — consent banner appears → click Accept → ads should load
-3. Check AdSense country report over next 7 days — UK/EU impressions should climb
